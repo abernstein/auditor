@@ -7,14 +7,13 @@
 # @category    Sysadmin
 # @package     Audit
 # @subpackage  Server
-# @copyright   Copyright [c] 2012 GoDaddy.com
+# @copyright   Copyright [c] 2013 Aaron Bernstein
 #
-# @author Aaron Bernstein <abernstein@godaddy.com>
+# @author Aaron Bernstein <dev@aaronbernstein.com>
 #
 # @todo
 #
 # @depends srvr_config.sh   Configuration file with list of known users/services
-# @depends listusers.sh     Script for listing users
 ################################################################################
 
 #!/bin/bash
@@ -22,9 +21,6 @@
 # Load Configuration Settings
 config_file="srvr_config.sh"
 source ./${config_file}
-
-listusers_file="./includes/list_users.sh"
-
 
 ################################################################################
 # Genral Functions
@@ -46,7 +42,7 @@ echo -e "${appender}\nUsers: ${known_users[@]}\n\nServices: ${known_services[@]}
 
 ################################################################################
 create_header "List Users"
-source "${listusers_file}"
+source "${list_users}"
 
 ################################################################################
 create_header "Certificates"
