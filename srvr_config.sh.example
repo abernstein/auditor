@@ -1,0 +1,25 @@
+################################################################################
+#
+# This Script is intended to be used in any server environmet via configuration
+# A list of known services, user/groups, working directories will be leveraged
+# by the application to audit the server.
+#
+# @category    Sysadmin
+# @package     Audit
+# @subpackage  Server
+# @copyright   Copyright [c] 2012 GoDaddy.com
+#
+# @author Aaron Bernstein <abernstein@godaddy.com>
+#
+# @todo
+################################################################################
+#!/bin/bash
+###### LOOKUP VARIABLES #####
+known_services=(http crond soffice memcached)
+known_users=(nobody apache)
+
+#############################
+#   Dependency Injection    #
+#############################
+####### SERVICE FILES #######
+list_users="./includes/list_users.sh"
